@@ -1,13 +1,17 @@
-\documentclass[12pt,A5]{book}
+\documentclass[12pt,A5]{report}
+%% We use book for printing, this adds extra pages so that things like chapters always start on the left side etc.
+%% report is much like book, but not with extra pages 
 % letter (8.5x11) and A4 (8.4x 11.7) are close but not quite.
 % While A5 seems to be a good journal size
 % You fav moleskine is "large" 5x8.25
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
 
-%% To change Sections?
+%% To change Chapter/Sections
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 
@@ -32,10 +36,13 @@
 \author{Andrew Brady}
 \title{Hello Typeseting!}
 \begin{document}
+\pagenumbering{roman}
 \maketitle
 \tableofcontents
 
+
 \chapter{Hello World!}
+\pagenumbering{arabic}
 
 \section{Introduction}
 Hello World!!! That is generally how you get started in programming. While understanding how to make the typeset documents of our dreams. We will need to tackel a few things past that in this first chapter. \newline But what about a code listing?
@@ -47,12 +54,32 @@ Hello World!!! That is generally how you get started in programming. While under
 
 That was a simple \verb|BASIC| program, did you like it? With a simple code listing out of the way I do think we can get started. Keep in mind that there is no syntax highlighting there, but it will be covered in future sections.
 
-\section{Specialization}
-Moving allong with things, lets consider what we need to be able to cover. Prehaps with a list
+\section{What to cover?}
+Moving allong with things, lets consider what we need to be able to cover. 
+
+Now with a list of things we need to make sure we exersize.
+
+\begin{multicols*}{3}
+
+\begin{enumerate}
+\item Code Listing
+\item Quotes
+\item Callout Boxes
+\item Margin Notes
+\item Diagrams
+\item Columns
+\item Rotated pages?
+\end{enumerate}
+\end{multicols*}
+
+\section{Quote Example}
+That is one of my favorate quotes from evloutionary biology. But I first saw it in \textit{The Psychology of Computer Programming}
+
 \begin{quote}
-"With Specialization, to a specifc enviroment a system will lose its ablity to adapt"
+"With Specialization, to a specifc enviroment a system will lose its ablity to adapt" - Gerald Weinberg
+
 \end{quote}
-That is one of my favorate quotes from evloutionary biology. But I first saw it in \textit{The Phcology of a Programmer}
+
 
 \chapter{Moving Along...}
 
