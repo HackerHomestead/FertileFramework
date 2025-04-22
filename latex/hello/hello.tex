@@ -1,0 +1,65 @@
+\documentclass[12pt,A5]{book}
+% letter (8.5x11) and A4 (8.4x 11.7) are close but not quite.
+% While A5 seems to be a good journal size
+% You fav moleskine is "large" 5x8.25
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%% To change Sections?
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+%% Using Titlesec allows us to modify the chapters and sections to allow for stylazation without needing to modify the class
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{Chapter \ \thechapter} % label
+{0.5ex} % sep
+{
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+
+
+\author{Andrew Brady}
+\title{Hello Typeseting!}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Hello World!}
+
+\section{Introduction}
+Hello World!!! That is generally how you get started in programming. While understanding how to make the typeset documents of our dreams. We will need to tackel a few things past that in this first chapter. \newline But what about a code listing?
+
+\begin{verbatim}
+10 PRINT "HELLO WORLD!"
+20 GOTO 10
+\end{verbatim}
+
+That was a simple \verb|BASIC| program, did you like it? With a simple code listing out of the way I do think we can get started. Keep in mind that there is no syntax highlighting there, but it will be covered in future sections.
+
+\section{Specialization}
+Moving allong with things, lets consider what we need to be able to cover. Prehaps with a list
+\begin{quote}
+"With Specialization, to a specifc enviroment a system will lose its ablity to adapt"
+\end{quote}
+That is one of my favorate quotes from evloutionary biology. But I first saw it in \textit{The Phcology of a Programmer}
+
+\chapter{Moving Along...}
+
+What happens if we put a little something here kinda like a summary at the beginning of a chapter
+
+\section{Frist Princaples}
+
+Let's discuss what "Frist Princaples" really means.
+
+\end{document}
