@@ -1,0 +1,49 @@
+\documentclass[12pt,A5]{report}
+%% We use book for printing, this adds extra pages so that things like chapters always start on the left side etc.
+%% report is much like book, but not with extra pages 
+% letter (8.5x11) and A4 (8.4x 11.7) are close but not quite.
+% While A5 seems to be a good journal size
+% You fav moleskine is "large" 5x8.25
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+%% To change Chapter/Sections
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+%% Using Titlesec allows us to modify the chapters and sections to allow for stylazation without needing to modify the class
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{Chapter \ \thechapter} % label
+{0.5ex} % sep
+{
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+
+
+\author{Andrew Brady}
+\title{The Computer}
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+\tableofcontents
+
+
+\include{chapters/preface}
+\pagenumbering{arabic}
+
+\include{chapters/chap1_computers}
+
+\end{document}
