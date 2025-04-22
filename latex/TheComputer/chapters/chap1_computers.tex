@@ -1,0 +1,68 @@
+\chapter{Computers}
+
+% Insert Graphic %
+
+The above diagram show the most basic components of a modern computer. And by “modern” I do mean since 1946, so you know like 70 years. The concepts in the first digital computer have not really changed. They have gotten smaller, faster, and cheaper. This is mostly thanks to advances in material science around the semi-conductor. The introduction of transistors and then progression of packaging of them into microscopic wafers. But I digress, The pattern even the naming of a computer has remained consistent all this time and so if you wrap your head around the simplified model of a computer it will remain relevant for years to come. The next likely change in computer architecture will be quantum computers and they are still quite far of from being on your desk or carried in everyone's pocket.
+
+In a twist of self reflectional success. All the rapid advancements in computing have been accelerated by computers themselves. That is we have used computers to advance computers and while the curve has slowed it is far from plateauing. 
+But how? In the following sections follow along as we dive into the how these machines can accomplish so much. But before we dive to deep let me run you though a thought experiment to start building a model from a different perspective … Where you are the computer!
+
+\section{The Diligent Worker}
+
+You are a diligent worker at Acme Co. When a new customer order comes in you are one in a pool of people in the orders processing department, expected to process paperwork, no computers. 
+Start by imaging a desk that includes what you need to do your work.
+    • A clear surface
+    • In and Out trays 
+    • Tools like pens, pencils, stamps, and typewriter
+    • Reference cards and lookup tables
+    • The desk has a few drawers
+      
+Lets walk through a typical workflow of someone using this workspace to process a customer order.
+    1. You glance at the clock to keep a consistent pace since after all this is pretty boring work and you know your mind wonders easily.
+    2. Tasks and messages are put into the “In” tray, stacking them on top of each other. Generally they are templated forms filled out by other departments or customers. Memos are also templated with familiar headings like “To”, “From”, and “Subject”, and a blank space for the body of a message. Regardless they are in standardized “formats”
+    3. You take these “inputs” one at a time and place it into the clear space on the desk to start working. In the case of a customer’s order you may have several forms in your inbox that are related, you go through the stack and pull these out so that now you have all three related forms on your desk at once.
+    4. The type of order is specified at the top of the first form. You know what is needed and it’s proper sequence comes next from your your desk reference and lookup tables.
+    5. You proceed to bring out a blank invoice form from your drawer and take information from each form and start filling out a new invoice form. You perform some basic arithmetic to add up things like quantities, pricing, and any calculate any discounts. 
+    6. Once finished you stamp the form, sign it and place it in your outbox for someone to pickup and send to the customer.
+    7. Finally before taking the next group of papers you clear your desk either by trashing the now processed forms or you might stamp them for filing and place them in your outbox. 
+    8. You then record the order number, date, and customer in a journal as a log. 
+    9. You take the next paper from the inbox and start the process all over again, until your inbox is empty.
+    10.  When the clock strikes 5:00pm you go home and have a stiff drink. 
+This “pattern” or “workflow” has been around for a really long time, business and government have been refining the efficacy of clerical work for many hundreds of years. Guess what … the “computer” is not any different. In fact one of the reasons that computers became so popular so quickly for this kind of work is that most humans really would rather not engage is such repetitive work. 
+The inbox is the “Input Device”
+The outbox is the “Output Device”
+The clear working desk is the memory unit
+The arithmetic/Logic units are like the tools and reference tables on the desk
+And then there is of course you. You are the one who ultimately has a way of thinking, taking instructions and executing them. You are the control unit along with your friend the clock of course.
+And just like a computer you are reprogrammable, able to adapt to new kinds of instructions whether it be to process an order and next write a memo or fill out an interoffice survey. And over time as new forms are developed you update your programming to adapt, even though basically all that has changed is the content of the data not the tools needed to accomplish the task.
+But if we go deeper it gets a little less familiar… because you see the computer only understands a language of binary, on and offs or for simplicity 1s and 0s. Generally these are grouped 8 together to make a byte and 16 together to form a word. (Two bytes is a word) and a single on or off state is called a bit.
+Just like us computers use timing and patterns to understand input.
+This grouping allows the computer to draw the line on how much information it will process at a time. Kind of like our conventions for reading back a phone number 555-555-5555.
+
+\section{Father of Modern Computing}
+
+One of the most important figures in computer science was John von Neumann a mathematician, physicist, engineer and polymath.
+All modern computers, including the the ones in your car, tv, phone, game console, digital watch, etc. are based on what is referred to as the “von Neumann architecture”
+
+% Picture of Van Neumann %
+% Diagram Van Neumann computer %
+
+Lets try to cover the concept of a computer at a high level. I want you to keep this simple model and a few basic rules in your head, or refer back to it as you learn more of the details of specific devices, and test to see if the simple model holds true.
+Nothing really interacts with the CPU directly. 1) All Input is fed to memory 2) Memory is read by the CPU (Ether this is an instruction or a value 3) CPU reads from locations in memory 4) CPU Computes a result and writes to memory 5) Output devices read from memory locations and output those values from memory.
+THAT IS IT! That is how every Computer, smart TV, digital cell phone, Mainframe, and Game console work. The key to a universal understanding of modern technology is to learn how to manipulate input into memory and get the desired result. 
+Of course that is a very simplistic model. Just like anything in life you do have to learn how to ask the right questions, say the right words. In this case its learning to en-“code” in such a way that the computer does the maths so you can play a game or predict the weather. 
+Lets unpack the concept further...
+
+\section{Input / Output (IO)}
+
+While Input and Output are their own distinct elements, we often group them together since from a practical perspective they are often paired together. Some obvious examples are keyboard (input) and display (output). Even modern display standards such as HDMI preform a “handshake” meaning that in order for it to function properly the output device must also be ready to receive input. This goes for other standards such as USB too. But at a low level they are really two devices with a combined input and controller. 
+* Note: Unerversial Serial Bus (USB) is a topic on Praferials and Buses of its own and deservies its own chapiter if not a whole book *
+Speaking of an IO “controller” lets explore how one of those might work, such as a USB keyboard that has been connected. See the USB device when it was “loaded” by the computer was read (Input) into a location in memory. This might be handled by a hard coded firmware, a BIOS/UEFI or from the Operating System (We will discuss those later on) but the end result is a range of memory addresses that represent the state and critical information related to the devices plugged in; such as your keyboard. 
+When you press a button on your keyboard two things happen. 1) A location in memory called the keyboard buffer is updated with the value of the key pressed and 2) a signal may be sent called an interrupt notifying the CPU that a significant event has occurred (a key-press). The interrupt signal is an exception to the “everything talks via memory” rule. While the contains and location (vector) of the interrupt are stored in memory the physical processor has a pin that is pulled to indicate “hey stop what your doing and pay attention!”. These messages are handled by the processors interrupt request handler (IRQ). The priority and what todo next is determined by the CPUs interrupt service handler (ISR) a special routine you guessed it held in memory and something that may be manipulated, in this case it knows the location in memory that holds the value of the key you just pressed.
+While most operations conducted by the computer are simply read or polled form memory by the CPU. Interrupts are fired off as a critical part of interacting with IO devices including input like keyboards, network interfaces and storage devices such as a hard drive. But we will wait and give storage its own section. When we get there just remember that they are just IO devices not any different then your keyboard or monitor. … just they are packaged as one device … they still have decrete input AND output when you look more closely.
+
+\section{Memory}
+
+\section{Central Processing Unit (CPU)}
+
+\section{Storage}
