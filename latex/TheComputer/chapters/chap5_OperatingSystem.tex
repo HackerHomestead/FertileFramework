@@ -1,0 +1,26 @@
+Summary
+Really for another section prob programming but lets just say, this is your universe until you decide to share it. Your very own computer. It doesn’t have networking and really no other programs just the essentials. In the past it was up to you to bring things in. paper was a primary source for a lot of software. Source code was distributed in books, magazines etc. where published with listing of source code, games, applications, uitilities and such. This was because many people did not have a disk drive. They and other portable media was just to expensive. There was a side effect to this constraint, the source code was not only available but you where forced to at least process it once though your own I/O chain.
+FreeDOS
+Lets install freedos
+QEMU
+Use KVM?
+Command for booting with a hard drive
+qemu-system-i386 --drive file=./FD13FULL.img \
+	--drive format=raw,file=myfreedos.img
+
+
+Once the install is complete when you reboot remove the install image from the command.
+Bare-metal
+This is not much different except your going to need to write to something physical
+
+FreeDOS Package manager
+I always forget the command for the package manager, its very useful as freedos images come with a load of software and tools all of witch are open source (and the source is included too). All the packages are included on the disk images so they are off-line, we love that!
+Make sure you have the install disk inserted or included in your qemu command line as the second disk (so it doesn’t try to boot from it) and once booted type:
+FDIMPLES
+You will be presented with a Text User Interface (TUI) and be able to install packages.
+Popular Linux Distributions
+Alpine Linux
+Linux From Scratch (LFS)
+Buildroot with buildroot
+
+

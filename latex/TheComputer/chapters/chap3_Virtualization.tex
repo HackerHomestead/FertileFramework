@@ -1,0 +1,28 @@
+Summary
+This is a summary
+qemu
+This is the tool we will be using
+Check libvert
+libvert-ok
+
+cat /proc/cpuinfo | egrep "vmx|svm" | uniq
+
+Don’t forget to specify memory!
+-m 512M
+
+Command for creating a new raw image
+qemu-img create myfreedos.img 1G
+
+Command for booting with an iso (CD-ROM)
+qemu-system-x86_64 -drive format=raw,media=cdrom,readonly=on,file=debian-8.2.0-amd64-DVD-1.iso 
+
+Command for booting with a hard drive
+qemu-system-i386 \
+	-drive file=./FD13FULL.img \
+	-drive format=raw,file=myfreedos.img \
+	-enable-kvm
+
+
+Once the install is complete when you reboot remove the install image from the command.
+
+
